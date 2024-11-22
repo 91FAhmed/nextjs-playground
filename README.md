@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -18,19 +16,63 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## important learing Notes
 
-## Learn More
+### react routing:-
 
-To learn more about Next.js, take a look at the following resources:
+##### 1)filebased-routing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+inside (src/app)
+create a folder and add page.tsx !important then wite react functional component auto \_layouts.tsx will auto import and generate children prop for you
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+##### 2)[dynamic routing]:-
 
-## Deploy on Vercel
+while creating folder adding braces will [foldername] will create dynamic route and add page.tsx as usual
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+###### {params} as props to fetch the dynamic url name
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+https:localhost:3000/about/[profile]
+```
+
+#### 3) [slugs] dynamic segmentation
+
+ability to fetch multiple routes
+
+```bash
+https:localhost:3000/about/[slugroute]
+ex:https:localhost:3000/about/profile/1
+\_#[...slug]
+   \_#page.tsx
+```
+
+const [] = params.slugRoute
+params.slugRoute = ["profile","1"]
+
+#### 4) protected routes
+
+"\_" = protected route
+ex \_lib for utility functions route
+
+```bash
+https:localhost:3000/about/_lib
+\_#_lib
+   \_#page.tsx
+    \_#utility.ts
+```
+
+#### 4)grouped routes
+
+(grouped)
+useful for omitting previous routes
+
+```bash
+  https:localhost:3000/about/(auth)/login
+  ex:https:localhost:3000/about/login
+  \_#(auth)
+     \_#page.tsx
+```
+
+#### 5) rest... nesting routes
+
+nesting multiple routes by compining many routing methods
