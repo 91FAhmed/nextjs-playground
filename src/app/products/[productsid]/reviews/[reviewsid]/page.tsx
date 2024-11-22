@@ -1,4 +1,5 @@
 import React from "react";
+import { notFound } from "next/navigation";
 export default async function Reviews({
   params,
 }: {
@@ -9,7 +10,8 @@ export default async function Reviews({
     <div>
       <h1>
         {" "}
-        the Reviews for {productsid} is {reviewsid}
+        the Reviews for {productsid} is{" "}
+        {Number(reviewsid) > 400 ? notFound() : reviewsid}
       </h1>
     </div>
   );
