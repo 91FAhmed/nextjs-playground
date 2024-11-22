@@ -1,13 +1,9 @@
 import React from "react";
 
-export default function CustomNotFound({
-  params,
-}: {
-  params: { input: string };
-}) {
+export default function CustomNotFound() {
   return (
     <div>
-      <h1>Custom 404 not found {params.input}</h1>
+      <h1>Custom 404 not found </h1>
     </div>
   );
 }
