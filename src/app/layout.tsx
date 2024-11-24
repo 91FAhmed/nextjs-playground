@@ -1,4 +1,6 @@
 import "./globals.css";
+import Header from "./header";
+import Footer from "./footer";
 
 export const metadata = {
   title: "Next.js",
@@ -12,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="relative h-lvh">
+        <Header />
+        <section className="font-sans  font-light px-8  ">{children}</section>
+        <Footer />
+      </body>
     </html>
   );
 }
