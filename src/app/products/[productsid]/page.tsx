@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+
+import Link from "next/link";
 type props = {
   params: {
     productid: string;
@@ -34,6 +36,12 @@ export default async function ProductsId({
           {`${productsid} Lorem ipsum dolor sit amet consectetur,
           adipisicing elit. Ducimus sit porro deleniti?`}
         </h1>
+        <Link
+          className="bg-slate-600 text-white hover:transition-colors hover:bg-green-400"
+          href="/orderproduct"
+        >
+          Order Now!
+        </Link>
       </div>
     </div>
   );
